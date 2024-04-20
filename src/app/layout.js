@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
 
         <div className="layout">
           <AppBar />
-          <div className="bg-white-300 pt-[80px] px-2 sm:px-5">
+          <div className="grid bg-white-300 pt-[80px] px-2 sm:px-5">
             {children}
           </div>
           <Footer />

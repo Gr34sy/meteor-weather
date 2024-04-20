@@ -26,7 +26,7 @@ export function AppBar() {
   return (
     <aside
       className={
-        "bg-white-100 py-5 rounded-xl flex flex-col gap-4"
+        "bg-white-100 py-5 rounded-r-xl flex flex-col gap-4"
       }
     >
       <div

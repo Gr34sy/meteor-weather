@@ -1,5 +1,9 @@
+import { LoadingScreen } from "@/components/LoadingScreen";
+
 export default function Forecast(){
     return (
-        <div>Forecast</div>
+        <div>
+            <LoadingScreen />
+        </div>
     )
 }
