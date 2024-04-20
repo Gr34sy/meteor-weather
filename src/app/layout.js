@@ -18,9 +18,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        <AppBar />
-        <div className="layout bg-white-300">{children}</div>
-        <Footer />
+
+        <div className="layout">
+          <AppBar />
+          <div className="bg-white-300 pt-[80px] px-2 sm:px-5">
+            {children}
+          </div>
+          <Footer />
+        </div>
+
       </body>
     </html>
   );

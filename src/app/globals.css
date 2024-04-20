@@ -10,14 +10,18 @@
 
 body {
   position: relative;
+  background-color: #EDEDED;
+}
+
+.layout{
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
-
 }
 
 @media(min-width: 1024px){
-  body{
+  .layout{
     min-height: 100dvh;
   }
 }
+
