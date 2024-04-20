@@ -10,8 +10,14 @@
 
 body {
   position: relative;
-  min-height: 100dvh;
   display: grid;
   grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+
 }
 
+@media(min-width: 1024px){
+  body{
+    min-height: 100dvh;
+  }
+}
