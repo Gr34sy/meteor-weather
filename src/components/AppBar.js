@@ -17,17 +17,20 @@ import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 
 // hooks
-import { useContext, useState } from "react";
-import NightmodeContext from "@/store/mode-context";
+import { useState } from "react";
 
-export function AppBar() {
-  const [collapsed, setCollapsed] = useState(true);
+export function AppBar({nightmode, changeMode}) {
+  const [collapsed, setCollapsed] = useState(false);
   const [active, setActive] = useState("homepage");
 
-  const nightmode = useContext(NightmodeContext);
+  function handleChangeMode(){
+    if(typeof changeMode === "function"){
+      changeMode();
+    }
+  }
 
   return (
-    <aside className={"bg-white-100 py-5 rounded-r-xl flex flex-col gap-4"}>
+    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl flex flex-col gap-4"}>
       <div
         className={
           "px-3 flex items-center " +
@@ -37,21 +40,21 @@ export function AppBar() {
         {!collapsed && (
           <div
             className="flex gap-2 hover:cursor-pointer"
-            onClick={nightmode.changeMode}
+            onClick={handleChangeMode}
           >
             <FontAwesomeIcon
-              icon={nightmode.mode ? faToggleOn : faToggleOff}
-              className="size-[25px] hover:cursor-pointer text-slate-700"
+              icon={nightmode ? faToggleOn : faToggleOff}
+              className="size-[25px] hover:cursor-pointer text-slate-700 dark:text-white-400"
             />
 
-            <p className="font-semibold tracking-wider">{nightmode.mode ? "Dark" : "Light"}</p>
+            <p className="font-semibold tracking-wider">{nightmode ? "Dark" : "Light"}</p>
           </div>
         )}
 
         <FontAwesomeIcon
           onClick={() => setCollapsed((prev) => !prev)}
           icon={collapsed ? faChevronRight : faChevronLeft}
-          className="size-[25px] hover:cursor-pointer text-slate-700"
+          className="size-[25px] hover:cursor-pointer text-slate-700 dark:text-white-400"
         />
       </div>
 
@@ -68,13 +71,13 @@ export function AppBar() {
           >
             <FontAwesomeIcon
               icon={faHouse}
-              className="size-[35px] my-[5px] text-slate-700"
+              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
             />
             {!collapsed && (
               <p
                 className={
                   "px-2 py-2 rounded-2xl " +
-                  (active === "homepage" ? "text-white-100 bg-red-400" : "")
+                  (active === "homepage" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
                 }
               >
                 Homepage
@@ -95,13 +98,13 @@ export function AppBar() {
           >
             <FontAwesomeIcon
               icon={faCalendar}
-              className="size-[35px] my-[5px] text-slate-700"
+              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
             />
             {!collapsed && (
               <p
                 className={
                   "px-2 py-2 rounded-2xl " +
-                  (active === "30forecast" ? "text-white-100 bg-red-400" : "")
+                  (active === "30forecast" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
                 }
               >
                 Forecast
@@ -122,13 +125,13 @@ export function AppBar() {
           >
             <FontAwesomeIcon
               icon={faSmog}
-              className="size-[35px] my-[5px] text-slate-700"
+              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
             />
             {!collapsed && (
               <p
                 className={
                   "px-2 py-2 rounded-2xl " +
-                  (active === "pollution" ? "text-white-100 bg-red-400" : "")
+                  (active === "pollution" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
                 }
               >
                 Pollution
@@ -149,13 +152,13 @@ export function AppBar() {
           >
             <FontAwesomeIcon
               icon={faGear}
-              className="size-[35px] my-[5px] text-slate-700"
+              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
             />
             {!collapsed && (
               <p
                 className={
                   "px-2 py-2 rounded-2xl " +
-                  (active === "options" ? "text-white-100 bg-red-400" : "")
+                  (active === "options" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
                 }
               >
                 Options
@@ -167,9 +170,9 @@ export function AppBar() {
 
       {collapsed && (
         <FontAwesomeIcon
-          icon={nightmode.mode ? faToggleOn : faToggleOff}
-          className="px-3 pt-3 size-[35px] text-slate-700 hover:cursor-pointer"
-          onClick={nightmode.changeMode}
+          icon={nightmode ? faToggleOn : faToggleOff}
+          className="px-3 pt-3 size-[35px] text-slate-700 dark:text-white-400 hover:cursor-pointer"
+          onClick={handleChangeMode}
         />
       )}
     </aside>
