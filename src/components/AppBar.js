@@ -17,32 +17,39 @@ import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import Link from "next/link";
 
 // hooks
-import { useState } from "react";
+import { useContext, useState } from "react";
+import NightmodeContext from "@/store/mode-context";
 
 export function AppBar() {
   const [collapsed, setCollapsed] = useState(true);
   const [active, setActive] = useState("homepage");
 
-  return (
-    <aside
-      className={
-        "bg-white-100 py-5 rounded-r-xl flex flex-col gap-4"
-      }
-    >
-      <div
-        className={"px-3 flex items-center " + (!collapsed ? "justify-between gap-1" : "justify-center")}
-        onClick={() => setCollapsed((prev) => !prev)}
-      >
-        {!collapsed && <div className="flex gap-2 hover:cursor-pointer">
-          <FontAwesomeIcon
-            icon={faToggleOff}
-            className="size-[25px] hover:cursor-pointer text-slate-700"
-          />
+  const nightmode = useContext(NightmodeContext);
 
-          <p className="font-semibold tracking-wider">Dark</p>
-        </div>}
+  return (
+    <aside className={"bg-white-100 py-5 rounded-r-xl flex flex-col gap-4"}>
+      <div
+        className={
+          "px-3 flex items-center " +
+          (!collapsed ? "justify-between gap-1" : "justify-center")
+        }
+      >
+        {!collapsed && (
+          <div
+            className="flex gap-2 hover:cursor-pointer"
+            onClick={nightmode.changeMode}
+          >
+            <FontAwesomeIcon
+              icon={nightmode.mode ? faToggleOn : faToggleOff}
+              className="size-[25px] hover:cursor-pointer text-slate-700"
+            />
+
+            <p className="font-semibold tracking-wider">{nightmode.mode ? "Dark" : "Light"}</p>
+          </div>
+        )}
 
         <FontAwesomeIcon
+          onClick={() => setCollapsed((prev) => !prev)}
           icon={collapsed ? faChevronRight : faChevronLeft}
           className="size-[25px] hover:cursor-pointer text-slate-700"
         />
@@ -59,7 +66,10 @@ export function AppBar() {
                 : "")
             }
           >
-            <FontAwesomeIcon icon={faHouse} className="size-[35px] my-[5px] text-slate-700" />
+            <FontAwesomeIcon
+              icon={faHouse}
+              className="size-[35px] my-[5px] text-slate-700"
+            />
             {!collapsed && (
               <p
                 className={
@@ -110,7 +120,10 @@ export function AppBar() {
                 : "")
             }
           >
-            <FontAwesomeIcon icon={faSmog} className="size-[35px] my-[5px] text-slate-700" />
+            <FontAwesomeIcon
+              icon={faSmog}
+              className="size-[35px] my-[5px] text-slate-700"
+            />
             {!collapsed && (
               <p
                 className={
@@ -134,7 +147,10 @@ export function AppBar() {
                 : "")
             }
           >
-            <FontAwesomeIcon icon={faGear} className="size-[35px] my-[5px] text-slate-700" />
+            <FontAwesomeIcon
+              icon={faGear}
+              className="size-[35px] my-[5px] text-slate-700"
+            />
             {!collapsed && (
               <p
                 className={
@@ -149,7 +165,13 @@ export function AppBar() {
         </li>
       </ul>
 
-      {collapsed && <FontAwesomeIcon icon={faToggleOff} className="px-3 pt-3 size-[35px] text-slate-700 hover:cursor-pointer"/>}
+      {collapsed && (
+        <FontAwesomeIcon
+          icon={nightmode.mode ? faToggleOn : faToggleOff}
+          className="px-3 pt-3 size-[35px] text-slate-700 hover:cursor-pointer"
+          onClick={nightmode.changeMode}
+        />
+      )}
     </aside>
   );
 }
