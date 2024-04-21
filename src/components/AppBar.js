@@ -18,10 +18,13 @@ import Link from "next/link";
 
 // hooks
 import { useState } from "react";
+import { usePathname } from 'next/navigation'
 
 export function AppBar({nightmode, changeMode}) {
   const [collapsed, setCollapsed] = useState(false);
-  const [active, setActive] = useState("homepage");
+
+  const pathname = usePathname();
+  console.log(pathname);
 
   function handleChangeMode(){
     if(typeof changeMode === "function"){
@@ -64,8 +67,8 @@ export function AppBar({nightmode, changeMode}) {
             href="/"
             className={
               "flex px-3 gap-2 items-center text-lg " +
-              (collapsed && active === "homepage"
-                ? "border-r-8 border-solid border-red-400"
+              (collapsed && pathname === "/"
+                ? "border-r-8 border-solid border-red-400 dark:border-red-600"
                 : "")
             }
           >
@@ -77,7 +80,7 @@ export function AppBar({nightmode, changeMode}) {
               <p
                 className={
                   "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
-                  (active === "homepage" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "hover:bg-white-50 dark:hover:bg-slate-50")
+                  (pathname === "/" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Homepage
@@ -91,8 +94,8 @@ export function AppBar({nightmode, changeMode}) {
             href="/30forecast"
             className={
               "flex px-3 gap-2 items-center text-lg " +
-              (collapsed && active === "30forecast"
-                ? "border-r-8 border-solid border-red-400"
+              (collapsed && pathname === "/30forecast"
+                ? "border-r-8 border-solid border-red-400 dark:border-red-600"
                 : "")
             }
           >
@@ -104,7 +107,7 @@ export function AppBar({nightmode, changeMode}) {
               <p
                 className={
                   "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
-                  (active === "30forecast" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
+                  (pathname === "/30forecast" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Forecast
@@ -118,8 +121,8 @@ export function AppBar({nightmode, changeMode}) {
             href="/pollution"
             className={
               "flex px-3 gap-2 items-center text-lg " +
-              (collapsed && active === "pollution"
-                ? "border-r-8 border-solid border-red-400"
+              (collapsed && pathname === "/pollution"
+                ? "border-r-8 border-solid border-red-400 dark:border-red-600"
                 : "")
             }
           >
@@ -131,7 +134,7 @@ export function AppBar({nightmode, changeMode}) {
               <p
                 className={
                   "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
-                  (active === "pollution" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
+                  (pathname === "/pollution" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Pollution
@@ -145,8 +148,8 @@ export function AppBar({nightmode, changeMode}) {
             href="/options"
             className={
               "flex px-3 gap-2 items-center text-lg " +
-              (collapsed && active === "options"
-                ? "border-r-8 border-solid border-red-400"
+              (collapsed && pathname === "/options"
+                ? "border-r-8 border-solid border-red-400 dark:border-red-600"
                 : "")
             }
           >
@@ -158,7 +161,7 @@ export function AppBar({nightmode, changeMode}) {
               <p
                 className={
                   "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
-                  (active === "options" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
+                  (pathname === "/options" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Options
