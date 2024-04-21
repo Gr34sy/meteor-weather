@@ -11,6 +11,7 @@
 .layout{
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
+  transition-property: background-color;
 }
 .layout__wrapper{
   grid-template-rows: auto 1fr;
@@ -20,6 +21,11 @@
   .layout{
     min-height: 100dvh;
   }
+}
+
+.options{
+  --max-width: 1250px;
+  width: min(100% - 2rem, var(--max-width));
 }
 
 .loader {

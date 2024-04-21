@@ -7,7 +7,7 @@ import { Layout } from "@/components/Layout";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "MeteorWeather",
+  title: "Meteor Weather",
   description: "Weather app which utilizes OpenWeather API.",
 };
 

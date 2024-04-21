@@ -19,7 +19,7 @@ export function Layout({ children }) {
   return (
     <div
       className={
-        "layout grid " +
+        "layout grid duration-500 delay-100 ease-in-out " +
         (nightmode
           ? "dark dark:bg-slate-800 text-white-100"
           : "bg-white-300 text-slate-950")
@@ -29,7 +29,7 @@ export function Layout({ children }) {
         nightmode={nightmode}
         changeMode={() => setNightmode((prev) => !prev)}
       />
-      <div className="layout__wrapper grid justify-items-center gap-4 sm:gap-10 px-2 sm:px-5">
+      <div className="layout__wrapper grid justify-items-center gap-4 sm:gap-10 px-1 sm:px-5">
         <Header />
 
         {children}
