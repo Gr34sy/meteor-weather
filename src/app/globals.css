@@ -8,15 +8,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-body {
-  position: relative;
-  background-color: #EDEDED;
-}
-
 .layout{
-  display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
+}
+.layout__wrapper{
+  grid-template-rows: auto 1fr;
 }
 
 @media(min-width: 1024px){

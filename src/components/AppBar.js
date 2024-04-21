@@ -24,7 +24,6 @@ export function AppBar({nightmode, changeMode}) {
   const [collapsed, setCollapsed] = useState(false);
 
   const pathname = usePathname();
-  console.log(pathname);
 
   function handleChangeMode(){
     if(typeof changeMode === "function"){
