@@ -11,7 +11,6 @@
 body {
   position: relative;
   background-color: #EDEDED;
-  background-color: #2b344293;
 }
 
 .layout{
@@ -31,7 +30,7 @@ body {
   height: 48px;
   border-radius: 50%;
   display: inline-block;
-  border-top: 4px solid #FFF;
+  border-top: 4px solid #2b3442;
   border-right: 4px solid transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
@@ -49,6 +48,13 @@ body {
   border-bottom: 4px solid transparent;
   animation: rotation 0.5s linear infinite reverse;
 }
+.dark .loader{
+  border-top: 4px solid #FFF;
+}
+.dark .loader::after{
+  border-left: 4px solid #DB3317;
+}
+
 @keyframes rotation {
   0% {
     transform: rotate(0deg);
