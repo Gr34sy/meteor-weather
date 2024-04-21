@@ -1,6 +1,6 @@
 export function LoadingScreen(){
     return (
-        <div className="flex h-3/4 items-center justify-center flex-col sm:flex-row gap-4">
+        <div className="flex h-3/4 items-center justify-center flex-col sm:flex-row gap-4 sm:absolute sm:top-0 sm:left-1/2 sm:translate-x-[-50%]">
             <div className="relative size-[50px]">
                 <span className="loader"></span>
             </div>
