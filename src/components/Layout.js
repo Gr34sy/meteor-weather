@@ -12,8 +12,11 @@ export function Layout({ children }) {
   const [nightmode, setNightmode] = useState(false);
 
   useEffect(() => {
-    const storedMode = localStorage.getItem("nightmode") || false;
-    setNightmode(storedMode);
+    const storedNightmode = localStorage.getItem("nightmode");
+    
+    if(storedNightmode === true || storedNightmode === false){
+      setNightmode(storedNightmode);
+    }
   }, []);
 
   return (

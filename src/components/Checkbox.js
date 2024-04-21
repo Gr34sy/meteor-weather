@@ -2,16 +2,12 @@
 
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
 
-export function Checkbox({name, text, startingValue, actionFunction}){
-    const [checked, setChecked] = useState(startingValue || false);
+export function Checkbox({name, text, checked, onChange }){
 
-    function handleChange(){
-        setChecked(prev => !prev);
-
-        if(typeof action === 'function'){
-            actionFunction();
+    function handleChange(e){
+        if(typeof onChange === "function"){
+            onChange(e.target.value);
         }
     }
 

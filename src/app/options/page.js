@@ -1,9 +1,32 @@
+"use client";
+
 import { BoxLayout } from "@/components/BoxLayout";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import { Checkbox } from "@/components/Checkbox";
 
+import { useState, useEffect } from "react";
+
 export default function Options() {
+  const [locationValue, setLocationValue] =  useState("");
+  const [nightmode, setNightmode] = useState(false);
+
+  useEffect(() => {
+    const storedNightmode = localStorage.getItem("nightmode");
+
+    if(storedNightmode === true || storedNightmode === false){
+      setNightmode(storedNightmode);
+    }
+  },[])
+
+  function handleLocationChange(value){
+    setLocationValue(value);
+  }
+  function handleNightmodeChange(value){
+    setNightmode(value);
+    localStorage.setItem("nightmode", value);
+  }
+
   return (
     <main className="options">
       <BoxLayout>
@@ -21,8 +44,8 @@ export default function Options() {
             </div>
 
             <div className="grid grid-cols-[1fr_auto] gap-2">
-              <Input />
-              <Button text="Set" />
+              <Input value={locationValue} onChange={handleLocationChange}/>
+              <Button text="Set" onClick={() => localStorage.setItem("location", locationValue)}/>
             </div>
           </div>
 
@@ -31,10 +54,10 @@ export default function Options() {
               <p className="font-semibold text-red-400 dark:text-red-600 duration-500 delay-100 ease-in-out">
                 Default Mode:
               </p>
-              <p>Dark On</p>
+              <p>Dark {nightmode ? "On" : "Off"}</p>
             </div>
 
-            <Checkbox name="darkmode" text="Enable Dark" startingValue={false} />
+            <Checkbox name="darkmode" text="Enable Dark" checked={nightmode} onChange={handleNightmodeChange}/>
           </div>
         </div>
       </BoxLayout>
