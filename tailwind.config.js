@@ -15,12 +15,14 @@ module.exports = {
       },
       colors: {
         slate:{
+          50: '#464d5025',
           700: '#2b3442',
           800: '#121212',
           900: '#141d2f',
           950: '#23252A',
         },
         white: {
+          50: '#ffffff11',
           100: '#ffffff',
           200: '#fefefe',
           300: '#EDEDED',

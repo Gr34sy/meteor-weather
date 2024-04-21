@@ -14,7 +14,6 @@ export function Layout({ children }) {
   useEffect(() => {
     const storedMode = localStorage.getItem("nightmode") || false;
     setNightmode(storedMode);
-    localStorage.setItem("nightmode", !storedMode);
   }, [])
 
   return (

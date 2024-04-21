@@ -30,7 +30,7 @@ export function AppBar({nightmode, changeMode}) {
   }
 
   return (
-    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl flex flex-col gap-4"}>
+    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
       <div
         className={
           "px-3 flex items-center " +
@@ -76,8 +76,8 @@ export function AppBar({nightmode, changeMode}) {
             {!collapsed && (
               <p
                 className={
-                  "px-2 py-2 rounded-2xl " +
-                  (active === "homepage" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
+                  "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
+                  (active === "homepage" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "hover:bg-white-50 dark:hover:bg-slate-50")
                 }
               >
                 Homepage
@@ -103,8 +103,8 @@ export function AppBar({nightmode, changeMode}) {
             {!collapsed && (
               <p
                 className={
-                  "px-2 py-2 rounded-2xl " +
-                  (active === "30forecast" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
+                  "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
+                  (active === "30forecast" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Forecast
@@ -130,8 +130,8 @@ export function AppBar({nightmode, changeMode}) {
             {!collapsed && (
               <p
                 className={
-                  "px-2 py-2 rounded-2xl " +
-                  (active === "pollution" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
+                  "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
+                  (active === "pollution" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Pollution
@@ -157,8 +157,8 @@ export function AppBar({nightmode, changeMode}) {
             {!collapsed && (
               <p
                 className={
-                  "px-2 py-2 rounded-2xl " +
-                  (active === "options" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "")
+                  "px-2 py-2 rounded-2xl duration-500 delay-100 ease-in-out hover:px-3 " +
+                  (active === "options" ? "text-white-100 bg-red-400 dark:bg-slate-900 dark:text-white-300" : "dark:hover:bg-white-50 hover:bg-slate-50")
                 }
               >
                 Options
