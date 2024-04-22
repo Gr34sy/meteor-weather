@@ -8,6 +8,7 @@ import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import { SmallBox } from "@/components/SmallBox";
 import { TodayCard } from "@/components/TodayCard";
+import { MediumBox } from "@/components/MediumBox";
 
 export default async function Home() {
   const lat = 10.99;
@@ -24,8 +25,8 @@ export default async function Home() {
   console.log(data);
 
   return (
-    <main className="justify-self-stretch">
-      <div className="grid sm:grid-cols-[auto_1fr_auto] gap-4 sm:w-[500px] mb-4">
+    <main className="justify-self-stretch flex  flex-col gap-4">
+      <div className="grid sm:grid-cols-[auto_1fr_auto] gap-4 sm:w-[500px]">
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
           className="hidden sm:block size-[30px] self-center"
@@ -34,7 +35,7 @@ export default async function Home() {
         <Button text="Search" />
       </div>
 
-      <div className="grid grid-home gap-4">
+      <div className="grid-home gap-4">
         <TodayCard />
 
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
@@ -51,7 +52,17 @@ export default async function Home() {
 
       <div className="bg-red-400">Bar</div>
 
-      <div className="grid grid-cols-8"></div>
+      <div className="grid-tabs gap-6">
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+        <MediumBox />
+      </div>
     </main>
   );
 }
