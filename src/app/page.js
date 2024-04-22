@@ -7,6 +7,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import { SmallBox } from "@/components/SmallBox";
+import { TodayCard } from "@/components/TodayCard";
 
 export default async function Home() {
   const lat = 10.99;
@@ -34,18 +35,18 @@ export default async function Home() {
       </div>
 
       <div className="grid grid-home gap-4">
-        <div className="bg-slate-700 row-span-2 col-span-2">D</div>
+        <TodayCard />
 
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
-        <SmallBox />
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
+        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%"/>
       </div>
 
       <div className="bg-red-400">Bar</div>
