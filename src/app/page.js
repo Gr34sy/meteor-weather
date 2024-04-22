@@ -25,7 +25,7 @@ export default async function Home() {
   console.log(data);
 
   return (
-    <main className="justify-self-stretch flex  flex-col gap-4">
+    <main className="justify-self-stretch flex  flex-col gap-4 lg:px-8">
       <div className="grid sm:grid-cols-[auto_1fr_auto] gap-4 sm:w-[500px]">
         <FontAwesomeIcon
           icon={faMagnifyingGlass}
