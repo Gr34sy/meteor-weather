@@ -70,3 +70,13 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
   }
 }
+
+.grid-forecast{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media(min-width: 500px){
+  .grid-forecast{
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
+  }
+}

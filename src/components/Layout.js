@@ -34,7 +34,7 @@ export function Layout({ children }) {
         changeMode={() => setNightmode((prev) => !prev)}
       />
 
-      <div className="grid md:grid-rows-[auto_1fr] justify-items-center gap-4 sm:gap-10 px-1 sm:px-5 pb-8">
+      <div className="grid md:grid-rows-[auto_1fr] justify-items-center gap-4 sm:gap-10 px-2 sm:px-8 md:px-16 pb-8">
         <Header />
         {children}
       </div>
