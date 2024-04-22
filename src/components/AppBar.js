@@ -39,7 +39,7 @@ export function AppBar({nightmode, changeMode}) {
   }
 
   return (
-    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl my-3 fixed md:static flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
+    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl my-6 md:my-3 shadow-[0_0_6px_0_rgba(0,0,0,0.5)] md:shadow-none fixed md:static flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
       <div
         className={
           "px-3 flex items-center " +
@@ -180,7 +180,7 @@ export function AppBar({nightmode, changeMode}) {
       {collapsed && (
         <FontAwesomeIcon
           icon={nightmode ? faToggleOn : faToggleOff}
-          className="px-3 pt-3 size-[35px] text-slate-700 dark:text-white-400 hover:cursor-pointer"
+          className="px-3 pt-3 size-[35px] hidden md:block text-slate-700 dark:text-white-400 hover:cursor-pointer"
           onClick={handleChangeMode}
         />
       )}
