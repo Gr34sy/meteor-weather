@@ -5,26 +5,25 @@ import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import { Checkbox } from "@/components/Checkbox";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
+
+const initialLocationKey = "location";
+const initialLocation = "Warsaw";
 
 export default function Options() {
-  const [locationValue, setLocationValue] =  useState("");
-  const [nightmode, setNightmode] = useState(false);
 
-  useEffect(() => {
-    const storedNightmode = localStorage.getItem("nightmode");
+  const [locationValue, setLocationValue] = useState("");
+  const [location, setLocation] = useLocalStorage(initialLocationKey, initialLocation, {
+    initializeWithValue: false,
+  });
 
-    if(storedNightmode === true || storedNightmode === false){
-      setNightmode(storedNightmode);
-    }
-  },[])
-
-  function handleLocationChange(value){
+  function handleLocationChange(value) {
     setLocationValue(value);
   }
-  function handleNightmodeChange(value){
-    setNightmode(value);
-    localStorage.setItem("nightmode", value);
+  function saveLocation() {
+    setLocation(locationValue);
+    setLocationValue("");
   }
 
   return (
@@ -40,24 +39,17 @@ export default function Options() {
               <p className="font-semibold text-red-400 dark:text-red-600 duration-500 delay-100 ease-in-out">
                 Default Location:
               </p>
-              <p>Ankara</p>
+              <p>{location}</p>
             </div>
 
             <div className="grid grid-cols-[1fr_auto] gap-2">
-              <Input value={locationValue} onChange={handleLocationChange}/>
-              <Button text="Set" onClick={() => localStorage.setItem("location", locationValue)}/>
+              <Input
+                value={locationValue}
+                onChange={handleLocationChange}
+                placeholder="Change Location"
+              />
+              <Button text="Set" onClick={saveLocation} />
             </div>
-          </div>
-
-          <div className="text-lg sm:text-2xl">
-            <div className="flex gap-4 sm:gap-14 justify-between items-center">
-              <p className="font-semibold text-red-400 dark:text-red-600 duration-500 delay-100 ease-in-out">
-                Default Mode:
-              </p>
-              <p>Dark {nightmode ? "On" : "Off"}</p>
-            </div>
-
-            <Checkbox name="darkmode" text="Enable Dark" checked={nightmode} onChange={handleNightmodeChange}/>
           </div>
         </div>
       </BoxLayout>

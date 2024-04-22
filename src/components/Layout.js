@@ -6,18 +6,16 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 // hooks
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
+
+const initialNightmodeKey = "nightmode";
+const initialNightmodeValue = false;
 
 export function Layout({ children }) {
-  const [nightmode, setNightmode] = useState(false);
-
-  useEffect(() => {
-    const storedNightmode = localStorage.getItem("nightmode");
-    
-    if(storedNightmode === true || storedNightmode === false){
-      setNightmode(storedNightmode);
-    }
-  }, []);
+  const [nightmode, setNightmode] = useLocalStorage(initialNightmodeKey, initialNightmodeValue, {
+    initializeWithValue: false,
+  });
 
   return (
     <div

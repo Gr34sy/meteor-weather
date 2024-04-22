@@ -1,6 +1,6 @@
 import { LoadingScreen } from "@/components/LoadingScreen";
 
-export default function Forecast(){
+export default function ForecastPage(){
     return (
         <div>
             <LoadingScreen />
