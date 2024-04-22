@@ -39,7 +39,7 @@ export function AppBar({nightmode, changeMode}) {
   }
 
   return (
-    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
+    <aside className={"bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl my-3 fixed md:static flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
       <div
         className={
           "px-3 flex items-center " +
