@@ -1,14 +1,11 @@
 // icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 // components
-import { Input } from "@/components/Input";
-import { Button } from "@/components/Button";
 import { SmallBox } from "@/components/SmallBox";
 import { TodayCard } from "@/components/TodayCard";
-import { MediumBox } from "@/components/MediumBox";
 import { SearchBar } from "@/components/SearchBar";
+import { Tabs } from "@/components/Tabs";
 
 export default async function Home() {
   const lat = 10.99;
@@ -43,19 +40,7 @@ export default async function Home() {
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
       </div>
 
-      <div className="bg-red-400">Bar</div>
-
-      <div className="grid-tabs gap-6">
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-        <MediumBox />
-      </div>
+      <Tabs />
     </main>
   );
 }
