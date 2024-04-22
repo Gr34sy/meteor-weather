@@ -18,10 +18,17 @@ import Link from "next/link";
 
 // hooks
 import { useState } from "react";
+import { useLocalStorage } from "usehooks-ts";
 import { usePathname } from 'next/navigation'
 
+const initialCollapsedKey = "collapsed";
+const initialCollapsedValue = false;
+
 export function AppBar({nightmode, changeMode}) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useLocalStorage(initialCollapsedKey , initialCollapsedValue
+  , {
+    initializeWithValue: false,
+  });
 
   const pathname = usePathname();
 

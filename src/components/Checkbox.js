@@ -5,17 +5,14 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Checkbox({name, text, initialValue, onChange }){
-    const INITIAL = initialValue;
+    const INITIAL = initialValue || false;
     const [checked, setChecked] = useState(INITIAL);
 
     function handleChange(e) {
         setChecked(e.target.checked);
-        console.log(e.target.checked);
     
         if(typeof onChange === "function") {
           onChange(e.target.checked);
-        } else {
-          localStorage.setItem("nightmode", e.target.checked);
         }
       }
 

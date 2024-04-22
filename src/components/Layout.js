@@ -6,7 +6,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 // hooks
-import { useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 const initialNightmodeKey = "nightmode";
