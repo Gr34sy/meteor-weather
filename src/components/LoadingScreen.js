@@ -1,6 +1,6 @@
 export function LoadingScreen(){
     return (
-        <div className="flex h-1/2 items-center justify-center flex-col sm:flex-row gap-4">
+        <div className="justify-self-center flex h-1/2 items-center justify-center flex-col sm:flex-row gap-4">
             <div className="relative size-[50px]">
                 <span className="loader"></span>
             </div>

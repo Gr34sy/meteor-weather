@@ -2,7 +2,7 @@ import { BoxLayout } from "./BoxLayout";
 
 export function PollutionTable() {
   return (
-    <div >
+    <div className="hidden min-[1150px]:block">
       <BoxLayout>
         <table className="table-auto rounded-xl border-collapse border-spacing-1">
           <thead>

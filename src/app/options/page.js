@@ -31,7 +31,7 @@ export default function Options() {
   // }
 
   return (
-    <main className="options">
+    <main>
       <LoadingScreen />
       {/* <BoxLayout>
         <div className="grid justify-center gap-3 sm:gap-6 px-2 sm:px-4 py-4 md:py-12 lg:py-20">

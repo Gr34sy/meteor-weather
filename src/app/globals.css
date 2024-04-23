@@ -8,11 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-.options{
-  --max-width: 1250px;
-  width: min(100% - 2rem, var(--max-width));
-}
-
 .loader {
   width: 48px;
   height: 48px;
