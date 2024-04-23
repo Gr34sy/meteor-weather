@@ -6,7 +6,7 @@ export default function ForecastPage() {
     <div className="justify-self-stretch flex  flex-col gap-4">
       <SearchBar />
       <h2 className="text-4xl font-bold">30 Day Forecast</h2>
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] grid-rows-[1fr_1fr_1fr] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(215px,1fr))] gap-4">
         <SlimBox
           date="21 Feb 2026"
           day="16"

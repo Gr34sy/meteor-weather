@@ -25,7 +25,7 @@ export default async function Home() {
     <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
       <SearchBar />
 
-      <div className="grid-home grid-cols-[repeat(auto-fill,minmax(210px,1fr))] gap-4 md:gap-6">
+      <div className="grid min-[500px]:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] min-[500px]:grid-rows-[1fr_1fr_1fr] gap-4 md:gap-6">
         <TodayCard img="stormy" location="Ankara" temp="3" date="22 Feb 2025"/>
 
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
