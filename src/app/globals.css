@@ -80,3 +80,22 @@
 .snowy-bg{
   background-image: url('../images/snowy-bg.jpg');
 }
+
+table tr{
+  padding-block: 1rem;
+}
+table td, th{
+  padding: 0.5rem;
+}
+table td:not(:first-child), th{
+  text-align: center;
+}
+table td:first-child, th{
+  font-weight: bold;
+}
+table :is(td:not(:last-child), th:not(:last-child)){
+  border-right: 2px solid #EDEDED;
+}
+.dark table :is(td:not(:last-child), th:not(:last-child)){
+  border-right: 2px solid #23252A;
+}
