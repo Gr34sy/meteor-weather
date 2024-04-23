@@ -7,7 +7,6 @@ import {
   faDroplet,
   faSun,
   faMoon,
-  faGauge,
 } from "@fortawesome/free-solid-svg-icons";
 
 export function SlimBox({ date, day, night, min, max, humidity, pressure }) {

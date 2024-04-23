@@ -37,10 +37,10 @@ export function TodayCard({ img, icon, location, temp, date }) {
           </p>
         </div>
 
-        <div className="bg-slate-100 p-2">
+        <div className="">
           <FontAwesomeIcon
             icon={faCloudBolt}
-            className="size-[50px] text-white-300"
+            className="size-[80px] text-red-400 dark:text-red-600"
           />
         </div>
       </div>
