@@ -5,10 +5,10 @@ import Link from "next/link"
 
 export function Footer(){
     return(
-        <footer className="bg-white-100 dark:bg-slate-700 rounded-t-lg p-3 flex justify-between gap-5 text-xs">
-            <div className="grid justify-items-center">
-                <p className="text-sm">Page made by Greasy &copy;</p>
-                <div className="flex gap-3">
+        <footer className="bg-white-100 dark:bg-slate-700 rounded-t-lg mx-1 md:col-span-2 p-3 flex flex-col sm:flex-row justify-between gap-5 text-xs">
+            <div className="grid gap-2">
+                <p className="text-sm justify-self-center">Page made by Greasy &copy;</p>
+                <div className="flex flex-col min-[355px]:flex-row gap-3">
                     <Link href="https://github.com/Gr34sy" className="flex items-center gap-1">
                         <FontAwesomeIcon icon={faGithub} className="size-[20px]"/>
                         <p className="text-red-400 dark:text-red-600">Check Github</p>
@@ -27,9 +27,9 @@ export function Footer(){
             </div>
 
             <div className="grid gap-1">
-                <p className="flex gap-2 justify-between">Data provided by <Link href="https://openweathermap.org" className="underline dark:text-red-600 text-red-400">OpenWeather</Link></p>
-                <p className="flex gap-2 justify-between">Pictures taken from <Link href="https://www.pexels.com" className="underline dark:text-red-600 text-red-400">Pexels</Link></p>
-                <p className="flex gap-2 justify-between">Loading spinner made by <Link href="https://cssloaders.github.io" className="underline dark:text-red-600 text-red-400">CssLoaders</Link></p>
+                <p className="flex gap-2 sm:justify-between">Data provided by <Link href="https://openweathermap.org" className="underline dark:text-red-600 text-red-400">OpenWeather</Link></p>
+                <p className="flex gap-2 sm:justify-between">Pictures taken from <Link href="https://www.pexels.com" className="underline dark:text-red-600 text-red-400">Pexels</Link></p>
+                <p className="flex gap-2 sm:justify-between">Loading spinner made by <Link href="https://cssloaders.github.io" className="underline dark:text-red-600 text-red-400">CssLoaders</Link></p>
             </div>
         </footer>
     )
