@@ -1,8 +1,10 @@
 import { BoxLayout } from "./BoxLayout";
+import { PageHeader } from "./PageHeader";
 
 export function PollutionTable() {
   return (
     <div className="hidden min-[1150px]:block">
+      <PageHeader text="Legend" textPosition="text-center"/>
       <BoxLayout>
         <table className="table-auto rounded-xl border-collapse border-spacing-1">
           <thead>

@@ -13,7 +13,7 @@ export function SlimBox({ date, day, night, min, max, humidity, pressure }) {
   return (
     <BoxLayout>
       <h3 className="text-2xl font-semibold pb-1 border-b-2 border-solid dark:border-slate-800 border-white-300 mb-3">{date}</h3>
-      <div className="grid gap-5">
+      <div className="grid gap-3">
         <div className="grid gap-2">
           <div className="flex gap-2 items-center">
             <FontAwesomeIcon icon={faSun} className="size-[35px]" />
@@ -28,14 +28,16 @@ export function SlimBox({ date, day, night, min, max, humidity, pressure }) {
           </div>
         </div>
 
+        <span className="rounded-full size-[8px] bg-white-300 dark:bg-slate-800 justify-self-center"></span>
+
         <div className="grid gap-2">
           <div className="flex gap-2 items-center">
             <FontAwesomeIcon
               icon={faTemperatureArrowUp}
               className="size-[35px]"
             />
-            <p className="">Min:</p>
-            <p className="text-red-400 dark:text-red-600">{min}&deg;C</p>
+            <p className="">Max:</p>
+            <p className="text-red-400 dark:text-red-600">{max}&deg;C</p>
           </div>
 
           <div className="flex gap-2 items-center">
@@ -43,10 +45,12 @@ export function SlimBox({ date, day, night, min, max, humidity, pressure }) {
               icon={faTemperatureArrowDown}
               className="size-[35px]"
             />
-            <p className="">Max:</p>
-            <p className="text-red-400 dark:text-red-600">{max}&deg;C</p>
+            <p className="">Min:</p>
+            <p className="text-red-400 dark:text-red-600">{min}&deg;C</p>
           </div>
         </div>
+
+        <span className="rounded-full size-[8px] bg-white-300 dark:bg-slate-800 justify-self-center"></span>
 
         <div className="grid gap-2">
           <div className="flex gap-2 items-center">
