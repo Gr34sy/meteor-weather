@@ -6,7 +6,7 @@ export default function ForecastPage() {
   return (
     <div className="justify-self-stretch flex  flex-col gap-4">
       <SearchBar />
-      <PageHeader text="30 days forecast" />
+      <PageHeader text="30 days forecast:" highlight="Ankara"/>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(215px,1fr))] gap-4">
         <SlimBox
           date="21 Feb 2026"

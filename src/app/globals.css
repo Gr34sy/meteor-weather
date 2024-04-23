@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* loader */
 .loader {
   width: 48px;
   height: 48px;
@@ -47,16 +48,7 @@
   }
 } 
 
-.grid-tabs{
-  display: grid;
-  grid-template-columns: 1fr;
-}
-@media(min-width: 500px){
-  .grid-tabs{
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
-  }
-}
-
+/* card bgs */
 .cloudy-bg{
   background-image: url('../images/cloudy-bg.jpeg');
 }

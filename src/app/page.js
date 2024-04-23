@@ -1,5 +1,18 @@
 // icons and images
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCloud,
+  faCloudRain,
+  faDroplet,
+  faEye,
+  faGaugeSimpleHigh,
+  faMagnifyingGlass,
+  faMoon,
+  faSnowflake,
+  faSun,
+  faTemperatureArrowDown,
+  faTemperatureArrowUp,
+  faWind,
+} from "@fortawesome/free-solid-svg-icons";
 
 // components
 import { SmallBox } from "@/components/SmallBox";
@@ -25,19 +38,24 @@ export default async function Home() {
     <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
       <SearchBar />
 
-      <div className="grid min-[500px]:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] min-[500px]:grid-rows-[1fr_1fr_1fr] gap-4 md:gap-6">
-        <TodayCard img="stormy" location="Ankara" temp="3" date="22 Feb 2025"/>
+      <div className="grid min-[500px]:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] min-[500px]:grid-rows-[1fr_1fr_1fr] gap-4">
+        <TodayCard img="stormy" location="Ankara" temp="3" date="22 Feb 2025" />
 
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
-        <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
+        <SmallBox icon={faTemperatureArrowUp} title="High" description="21%" />
+        <SmallBox icon={faTemperatureArrowDown} title="Low" description="21%" />
+        <SmallBox icon={faSun} title="Sunrise" description="21%" />
+        <SmallBox icon={faMoon} title="Sunset" description="21%" />
+        <SmallBox icon={faDroplet} title="Humidity" description="21%" />
+        <SmallBox icon={faEye} title="Visibility" description="21%" />
+        <SmallBox icon={faGaugeSimpleHigh} title="Pressure" description="21%" />
+        <SmallBox icon={faWind} title="Wind" description="21%" />
+        <SmallBox
+          icon={faCloud}
+          title="Cloudiness"
+          description="21%"
+        />
+        <SmallBox icon={faCloudRain} title="Rain" description="21%" />
+        <SmallBox icon={faSnowflake} title="Snow" description="21%" />
       </div>
 
       <Tabs />

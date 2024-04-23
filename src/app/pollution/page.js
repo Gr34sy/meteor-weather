@@ -1,5 +1,3 @@
-import { BoxLayout } from "@/components/BoxLayout";
-import { SearchBar } from "@/components/SearchBar";
 import { PageHeader } from "@/components/PageHeader";
 import { PollutionTable } from "@/components/PollutionTable";
 import { PollutionStats } from "@/components/PollutionStats";

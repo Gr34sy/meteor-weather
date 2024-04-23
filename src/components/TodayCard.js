@@ -16,7 +16,7 @@ export function TodayCard({ img, icon, location, temp, date }) {
   return (
     <div
       className={
-        "grid rounded-xl bg-red-400 dark:bg-slate-700 row-span-3 min-[500px]:col-span-2 bg-cover bg-center" +
+        "grid rounded-xl bg-red-400 dark:bg-slate-700 row-span-3 min-[500px]:col-span-3 bg-cover bg-center" +
         ` ${img}-bg`
       }
     >
