@@ -80,3 +80,22 @@
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
   }
 }
+
+.cloudy-bg{
+  background-image: url('../images/cloudy-bg.jpeg');
+}
+.stormy-bg{
+  background-image: url('../images/stormy-bg.jpg');
+}
+.night-bg{
+  background-image: url('../images/night-bg.jpg');
+}
+.sunny-bg{
+  background-image: url('../images/sunny-bg.jpg');
+}
+.rainy-bg{
+  background-image: url('../images/rainy-bg.jpg');
+}
+.snowy-bg{
+  background-image: url('../images/snowy-bg.jpg');
+}

@@ -1,4 +1,4 @@
-// icons
+// icons and images
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 // components
@@ -26,7 +26,7 @@ export default async function Home() {
       <SearchBar />
 
       <div className="grid-home gap-4">
-        <TodayCard />
+        <TodayCard img="cloudy"/>
 
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
