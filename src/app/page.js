@@ -22,11 +22,11 @@ export default async function Home() {
   console.log(data);
 
   return (
-    <main className="justify-self-stretch flex flex-col gap-4">
+    <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
       <SearchBar />
 
-      <div className="grid-home gap-4">
-        <TodayCard img="cloudy"/>
+      <div className="grid-home gap-4 md:gap-6">
+        <TodayCard img="rainy" location="Ankara" temp="3" date="22 Feb 2025"/>
 
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />
         <SmallBox icon={faMagnifyingGlass} title="Humidity" description="21%" />

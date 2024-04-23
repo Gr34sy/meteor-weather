@@ -26,7 +26,7 @@ export function Layout({ children }) {
         "transition-[background-color] min-[1024px]:min-h-[100dvh] md:grid md:grid-rows-[1fr] md:grid-cols-[auto_1fr] duration-500 delay-100 ease-in-out " +
         (nightmode
           ? "dark dark:bg-slate-800 text-white-100"
-          : "bg-white-300 text-slate-950")
+          : "bg-white-300 text-slate-700")
       }
     >
       <AppBar
@@ -34,7 +34,7 @@ export function Layout({ children }) {
         changeMode={() => setNightmode((prev) => !prev)}
       />
 
-      <div className="grid md:grid-rows-[auto_1fr] justify-items-center gap-4 sm:gap-10 px-2 sm:px-8 md:px-16 pb-8">
+      <div className="grid md:grid-rows-[auto_1fr] justify-items-center gap-4 sm:gap-10 px-2 sm:px-8 md:px-20 pb-8">
         <Header />
         {children}
       </div>

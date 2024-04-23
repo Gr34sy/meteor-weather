@@ -59,6 +59,7 @@
 @media(min-width: 500px){
   .grid-home{
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
   }
 }
 .grid-tabs{
