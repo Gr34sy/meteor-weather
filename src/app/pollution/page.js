@@ -1,5 +1,9 @@
+import { SearchBar } from "@/components/SearchBar";
+
 export default function PollutionPage(){
     return (
-        <div>Pollution</div>
+        <div>
+            <SearchBar/>
+        </div>
     )
 }
