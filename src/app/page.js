@@ -33,7 +33,6 @@ export default function Home() {
   const [today, setToday] = useState(false);
 
   async function getToday(locationValue) {
-    setLoading(false);
     try {
       const res = await fetch(`/api/today/?location=${locationValue}`);
       if (!res.ok) {

@@ -14,7 +14,6 @@ export default function ForecastPage() {
   const [forecast, setForecast] = useState(false);
 
   async function getForecast(locationValue) {
-    setLoading(false);
     try {
       const res = await fetch(`/api/forecast/?location=${locationValue}`);
       if (!res.ok) {

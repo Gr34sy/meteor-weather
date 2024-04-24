@@ -15,7 +15,6 @@ export default function PollutionPage() {
   const [pollution, setPollution] = useState(false);
 
   async function getPollution(locationValue) {
-    setLoading(false);
     try {
       const res = await fetch(`/api/pollution/?location=${locationValue}`);
       if (!res.ok) {

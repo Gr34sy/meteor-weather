@@ -10,6 +10,8 @@ import {
   faToggleOff,
   faToggleOn,
   faSmog,
+  faBars,
+  faXmarkCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 
@@ -39,7 +41,7 @@ export function AppBar({nightmode, changeMode}) {
   }
 
   return (
-    <aside className={"z-10 bg-white-100 dark:bg-slate-700 py-5 rounded-r-xl my-20 md:my-3 shadow-[0_0_6px_0_rgba(0,0,0,0.5)] md:shadow-none fixed md:static flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
+    <aside className={"z-10 bg-white-100 dark:bg-slate-700 py-5 rounded-l-xl md:rounded-r-xl md:rounded-l-none my-20 md:my-3 shadow-[0_0_6px_0_rgba(0,0,0,0.5)] md:shadow-none fixed right-0 md:static flex flex-col gap-4 " + (collapsed ? " " : " min-w-[185px]")}>
       <div
         className={
           "px-3 flex items-center " +
@@ -60,14 +62,14 @@ export function AppBar({nightmode, changeMode}) {
           </div>
         )}
 
-        <FontAwesomeIcon
+        {<FontAwesomeIcon
           onClick={() => setCollapsed((prev) => !prev)}
           icon={collapsed ? faChevronRight : faChevronLeft}
           className="size-[25px] hover:cursor-pointer text-slate-700 dark:text-white-400"
-        />
+        />}
       </div>
 
-      <ul className="flex flex-col gap-3">
+      <ul className={"flex flex-col gap-3 " + (collapsed ? "hidden md:flex" : "")}>
         <li>
           <Link
             href="/"
@@ -80,7 +82,7 @@ export function AppBar({nightmode, changeMode}) {
           >
             <FontAwesomeIcon
               icon={faHouse}
-              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
+              className={"size-[35px] my-[5px] text-slate-700 dark:text-white-400"}
             />
             {!collapsed && (
               <p
@@ -107,7 +109,7 @@ export function AppBar({nightmode, changeMode}) {
           >
             <FontAwesomeIcon
               icon={faCalendar}
-              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
+              className={"size-[35px] my-[5px] text-slate-700 dark:text-white-400"}
             />
             {!collapsed && (
               <p
@@ -134,7 +136,7 @@ export function AppBar({nightmode, changeMode}) {
           >
             <FontAwesomeIcon
               icon={faSmog}
-              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
+              className={"size-[35px] my-[5px] text-slate-700 dark:text-white-400"}
             />
             {!collapsed && (
               <p
@@ -161,8 +163,9 @@ export function AppBar({nightmode, changeMode}) {
           >
             <FontAwesomeIcon
               icon={faGear}
-              className="size-[35px] my-[5px] text-slate-700 dark:text-white-400"
+              className={"size-[35px] my-[5px] text-slate-700 dark:text-white-400"} 
             />
+
             {!collapsed && (
               <p
                 className={
