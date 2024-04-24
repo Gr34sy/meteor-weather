@@ -1,4 +1,4 @@
-import { transform30Forecast } from "@/utils/transform30Forecast";
+import { transformPollution } from "@/utils/transformPollution";
 
 export async function GET(req) {
   const url = req.nextUrl.searchParams;
@@ -14,19 +14,18 @@ export async function GET(req) {
     }
     const geocode = await locationRes.json();
 
-    // getting forecast
-    const forecastRes = await fetch(
-      `https://pro.openweathermap.org/data/2.5/forecast/climate?lat=${geocode[0].lat}&lon=${geocode[0].lon}&appid=${process.env.API_KEY}&units=metric`
+    // getting pollution
+    const pollutionRes = await fetch(
+      `http://api.openweathermap.org/data/2.5/air_pollution?lat=${geocode[0].lat}&lon=${geocode[0].lon}&appid=${process.env.API_KEY}&units=metric`
     );
-    if(!forecastRes.ok){
+    if(!pollutionRes.ok){
       throw new Error("Couldn't get the forecast");
     }
-    const forecastData = await forecastRes.json();
-    const forecast = transform30Forecast(forecastData);
-
+    const pollutionData = await pollutionRes.json();
+    const pollutionComponents = transformPollution(pollutionData);
 
     const data = {
-      list: forecast,
+      components: pollutionComponents,
       location,
     }
 

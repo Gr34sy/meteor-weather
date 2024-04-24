@@ -32,7 +32,7 @@ export default function Options() {
 
   return (
     <main className="align-self-stretch">
-      <LoadingScreen />
+      <LoadingScreen subtitle="App Customization Coming Soon!"/>
       {/* <BoxLayout>
         <div className="grid justify-center gap-3 sm:gap-6 px-2 sm:px-4 py-4 md:py-12 lg:py-20">
           <h2 className="text-2xl sm:text-4xl font-bold text-center text-slate-700 dark:text-white-100">

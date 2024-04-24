@@ -23,7 +23,6 @@ export default function ForecastPage() {
       const data = await res.json();
 
       setForecast(data);
-      console.log(data);
     } catch (err) {
       console.log(err);
       setError("Failed retrieving the data");
