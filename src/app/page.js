@@ -21,18 +21,44 @@ import { SearchBar } from "@/components/SearchBar";
 import { Tabs } from "@/components/Tabs";
 
 export default async function Home() {
-  const lat = 10.99;
-  const lon = 44.34;
-  const response = await fetch(
+  const lat = 52.23;
+  const lon = 21.01;
+
+  const todayRes = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`
   );
+  const forecastRes = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`);
 
-  if (!response.ok) {
+  if (!todayRes.ok || !forecastRes.ok) {
     throw new Error("Failed loading data");
   }
 
-  const data = await response.json();
-  console.log(data);
+  const todayData = await todayRes.json();
+  const forecastData = await forecastRes.json();
+
+  const forecast = forecastData.list.map((data) => {
+    const date = new Date(data.dt_txt);
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+    return {
+      temp: Math.round(data.main.temp),
+      weather: data.weather,
+      date: {
+        minutes: date.getMinutes(),
+        hour: date.getHours(),
+        day: date.getDate(),
+        month: months[date.getMonth()],
+        year: date.getFullYear(),
+      }
+    }
+  });
+
+  const firstDay = forecast[0].date.day;
+  const firstDate = forecast.filter((item) => item.date.day == firstDay);
+  const secondDate = forecast.filter((item) => item.date.day == (firstDay+1));
+  const thirdDate = forecast.filter((item) => item.date.day == (firstDay+2));
+  const fourthDate = forecast.filter((item) => item.date.day == (firstDay+3));
+  const fifthDate = forecast.filter((item) => item.date.day == (firstDay+4));
 
   return (
     <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
@@ -58,7 +84,7 @@ export default async function Home() {
         <SmallBox icon={faSnowflake} title="Snow" description="21%" />
       </div>
 
-      <Tabs />
+      <Tabs all={forecast} day1={firstDate} day2={secondDate} day3={thirdDate} day4={fourthDate} day5={fifthDate}/>
     </main>
   );
 }

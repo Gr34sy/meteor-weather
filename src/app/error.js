@@ -4,7 +4,7 @@ import { BoxLayout } from "@/components/BoxLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
-export default function ErrorBoundary({ error }) {
+export default function ErrorBoundary() {
   return (
     <div>
       <BoxLayout>
@@ -16,7 +16,7 @@ export default function ErrorBoundary({ error }) {
                 </h2>
             </div>
             <p className="text-lg">
-            {error.message}
+            Something went wrong!
             </p>
         </div>
       </BoxLayout>

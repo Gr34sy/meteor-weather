@@ -12,7 +12,7 @@ export function SearchBar() {
           icon={faMagnifyingGlass}
           className="hidden sm:block size-[30px] self-center hover:cursor-pointer"
         />
-        <Input placeholder="Search location" />
+        <Input placeholder="Enter zipcode or location name" />
       </label>
 
       <div>
