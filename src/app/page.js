@@ -32,24 +32,26 @@ export default function Home() {
   const [forecast, setForecast] = useState(false);
   const [today, setToday] = useState(false);
 
-  async function getToday(){
+  async function getToday(locationValue) {
     setLoading(false);
     try {
-      const res = await fetch(`/api/today/?location=${location}`);
+      const res = await fetch(`/api/today/?location=${locationValue}`);
+      if (!res.ok) {
+        throw new Error(res.message);
+      }
       const data = await res.json();
 
       setToday(data.today);
       setForecast(data.forecast);
-    } catch(err){
-      setError(true);
+    } catch (err) {
+      console.log(err);
+      setError("Failed retrieving the data");
     }
     setLoading(false);
   }
 
   useEffect(() => {
-
     getToday(location);
-
   }, [location]);
 
   if (loading) {
@@ -57,13 +59,17 @@ export default function Home() {
   }
 
   if (error) {
-    return <ErrorAlert message="Failed while retrieving the data" />;
+    return (
+      <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
+        <ErrorAlert message={error} />
+      </main>
+    );
   }
 
   if (today && forecast) {
     return (
       <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
-        <SearchBar />
+        <SearchBar action={setLocation} />
 
         <div className="grid min-[500px]:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] min-[500px]:grid-rows-[1fr_1fr_1fr] gap-4">
           <TodayCard
@@ -123,6 +129,8 @@ export default function Home() {
   }
 
   return (
-    <main className="justify-self-stretch flex flex-col gap-4 md:gap-6"></main>
+    <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
+      <SearchBar action={setLocation} />
+    </main>
   );
 }

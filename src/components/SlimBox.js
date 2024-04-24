@@ -62,7 +62,7 @@ export function SlimBox({ date, day, night, min, max, humidity, pressure }) {
           <div className="flex gap-2 items-center">
             <FontAwesomeIcon icon={faGaugeSimpleHigh} className="size-[30px]" />
             <p className="">Pressure:</p>
-            <p className="text-red-400 dark:text-red-600">{pressure}hPa</p>
+            <p className="text-red-400 dark:text-red-600">{pressure} hPa</p>
           </div>
         </div>
       </div>

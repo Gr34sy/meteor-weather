@@ -13,7 +13,7 @@ export function SearchBar({action}) {
 
   function search(){
     if(typeof action === "function"){
-      action(inputValue.trim());
+      action(inputValue.trim().replaceAll(' ', ''));
     }
   }
 
@@ -28,7 +28,7 @@ export function SearchBar({action}) {
           icon={faMagnifyingGlass}
           className="hidden sm:block size-[30px] self-center hover:cursor-pointer"
         />
-        <Input placeholder="Enter zipcode or location name" value={inputValue} onChange={onInputChange} />
+        <Input placeholder="City, zipcode, countrycode" value={inputValue} onChange={onInputChange} />
       </label>
 
       <div>
