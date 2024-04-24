@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export function Footer(){
     return(
-        <footer className="bg-white-100 dark:bg-slate-700 rounded-t-lg mx-1 md:col-span-2 p-4 flex flex-col sm:flex-row justify-between gap-5 text-xs">
+        <footer className="self-end bg-white-100 dark:bg-slate-700 rounded-t-lg mx-1 md:col-span-2 p-4 flex flex-col sm:flex-row justify-between gap-5 text-xs">
             <div className="grid gap-2">
                 <p className="text-sm justify-self-center">Page made by Greasy &copy;</p>
                 <div className="flex flex-col min-[355px]:flex-row gap-3">

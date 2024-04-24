@@ -23,7 +23,7 @@ export function Layout({ children }) {
   return (
     <div
       className={
-        "transition-[background-color] min-h-[100dvh] grid md:grid-rows-[1fr] md:grid-cols-[auto_1fr_auto] duration-500 delay-100 ease-in-out " +
+        "transition-[background-color] min-h-[100dvh] grid items-between md:grid-rows-[1fr] md:grid-cols-[auto_1fr_auto] duration-500 delay-100 ease-in-out " +
         (nightmode
           ? "dark dark:bg-slate-800 text-white-100"
           : "bg-white-300 text-slate-700")
