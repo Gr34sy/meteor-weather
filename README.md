@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App created with NextJS and OpenWeather API
+## The app utilizes the OpenWeather API and displays weather stats in a nice visual form
 
-## Getting Started
+### User can search for a weather data from specific location. On the homepage user can find weather statistics which describe current day at a chosen location (Warsaw by default). Also there is a 5-day forecast with 3-hour step. Therefore user can choose option which specific day stats would be displayed. 
 
-First, run the development server:
+On the 30 day forecast page, user gets cards with weather predictions each for one day in 30 day period
+Finally on the pollution page, current air pollution of the chosen location is displayed. On larger devices, app displays the table which helps user to determine how much is the air polluted.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+There are also options to hide the sider and switch between dark and light modes. User can also change color theme according to his preferences.The app was created using NextJS, because I have really wanted to get to know Next.JS 14 better. I've learnt some new conventions how to write API routes. I have also used TailwindCSS to fasten the styling of the interface.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Technologies used in the app:
+<img  align="left" alt="Next" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original-wordmark.svg" style="padding-right:10px;"/>
+<img align="left" alt="TailwindCss" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" style="padding-right:10px;" />
+<img align="left" alt="React" width="50px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" style="padding-right:10px;" />
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br/> <br/> <br/> 
 
-## Learn More
+#### Main App Features:
+<p>-> Retrieving OpenWeather API Data</p>
+<p>-> Displaying Data to the User</p>
+<p>-> Enabling User to Switch Between Dark and Light Modes </p>
+<p>-> Enabling User to Hide Sidebar </p>
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
