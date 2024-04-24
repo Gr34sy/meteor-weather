@@ -1,12 +1,10 @@
-"use client";
-
-import { BoxLayout } from "@/components/BoxLayout";
+import { BoxLayout } from "./BoxLayout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
-export default function ErrorBoundary({error}) {
-  return (
-    <div>
+export function ErrorAlert({message}){
+    return (
+        <div>
       <BoxLayout>
         <div className="p-3 sm:p-10 grid gap-2 justify-self-center justify-items-center">
             <div className="text-red-600 flex items-center gap-1">
@@ -16,10 +14,10 @@ export default function ErrorBoundary({error}) {
                 </h2>
             </div>
             <p className="text-lg">
-            {error.message}
+            {message}
             </p>
         </div>
       </BoxLayout>
     </div>
-  );
+    )
 }

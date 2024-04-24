@@ -1,10 +1,26 @@
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 import { Input } from "./Input";
 import { Button } from "./Button";
 
-export function SearchBar() {
+import { useState } from "react";
+
+export function SearchBar({action}) {
+  const [inputValue, setInputValue ] = useState(""); 
+
+  function search(){
+    if(typeof action === "function"){
+      action(inputValue.trim());
+    }
+  }
+
+  function onInputChange(value){
+    setInputValue(value)
+  }
+
   return (
     <div className="grid sm:grid-cols-[1fr_auto] gap-4 sm:w-[500px]">
       <label className="grid sm:grid-cols-[auto_1fr] gap-4">
@@ -12,11 +28,11 @@ export function SearchBar() {
           icon={faMagnifyingGlass}
           className="hidden sm:block size-[30px] self-center hover:cursor-pointer"
         />
-        <Input placeholder="Enter zipcode or location name" />
+        <Input placeholder="Enter zipcode or location name" value={inputValue} onChange={onInputChange} />
       </label>
 
       <div>
-        <Button text="Search" />
+        <Button text="Search" onClick={search} />
       </div>
 
     </div>
