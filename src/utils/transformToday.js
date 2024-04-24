@@ -1,4 +1,4 @@
-export async function getToday(lat, lon) {
+export function transformToday(data) {
   const months = [
     "Jan",
     "Feb",
@@ -14,10 +14,6 @@ export async function getToday(lat, lon) {
     "Dec",
   ];
 
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`
-  );
-  const data = await res.json();
   const timezone = data.timezone;
   const todayDate = new Date((Date.now() + timezone));
 
@@ -31,6 +27,7 @@ export async function getToday(lat, lon) {
       month: months[todayDate.getMonth()],
       year: todayDate.getFullYear(),
     },
+    location: data.name,
     weather: data.weather,
     min: Math.round(data.main.temp_min),
     max: Math.round(data.main.temp_max),

@@ -23,9 +23,6 @@ import { ErrorAlert } from "@/components/ErrorAlert";
 import { LoadingScreen } from "@/components/LoadingScreen";
 
 // functions
-import { getGeocode } from "@/utils/getGeocode";
-import { getForecast } from "@/utils/getForecast";
-import { getToday } from "@/utils/getToday";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -35,26 +32,23 @@ export default function Home() {
   const [forecast, setForecast] = useState(false);
   const [today, setToday] = useState(false);
 
-  const lat = 60.39;
-  const lon = 5.32;
+  async function getToday(){
+    setLoading(false);
+    try {
+      const res = await fetch(`/api/today/?location=${location}`);
+      const data = await res.json();
+
+      setToday(data.today);
+      setForecast(data.forecast);
+    } catch(err){
+      setError(true);
+    }
+    setLoading(false);
+  }
 
   useEffect(() => {
-    async function getToday(){
-      setLoading(false);
-      try {
-        const res = await fetch(`/api/today/?lat=${lat}&lon=${lon}`)
-        const data = await res.json();
 
-        setToday(data.today);
-        setForecast(data.forecast);
-
-      } catch(err){
-        setError(true);
-      }
-      setLoading(false);
-    }
-
-    getToday();
+    getToday(location);
 
   }, [location]);
 
@@ -69,13 +63,13 @@ export default function Home() {
   if (today && forecast) {
     return (
       <main className="justify-self-stretch flex flex-col gap-4 md:gap-6">
-        <SearchBar action={getGeocode} />
+        <SearchBar />
 
         <div className="grid min-[500px]:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] min-[500px]:grid-rows-[1fr_1fr_1fr] gap-4">
           <TodayCard
             weather={today.weather[0].main}
             date={today.date}
-            location={today.name}
+            location={today.location}
             temp={today.temp}
           />
 

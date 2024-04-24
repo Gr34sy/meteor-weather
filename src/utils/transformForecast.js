@@ -1,4 +1,4 @@
-export async function getForecast(lat, lon) {
+export function transformForecast(data) {
   const months = [
     "Jan",
     "Feb",
@@ -14,10 +14,6 @@ export async function getForecast(lat, lon) {
     "Dec",
   ];
 
-  const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`
-  );
-  const data = await res.json();
   const timezone = data.city.timezone;
 
   const forecastList = data.list.map((data) => {
