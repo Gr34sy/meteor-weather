@@ -51,21 +51,45 @@
 /* card bgs */
 .cloudy-bg{
   background-image: url('../images/cloudy-bg.jpeg');
+  
+  svg{
+    color: #fefefe;
+  }
 }
 .stormy-bg{
   background-image: url('../images/stormy-bg.jpg');
+
+  svg{
+    color: #fefefe;
+  }
 }
 .night-bg{
   background-image: url('../images/night-bg.jpg');
+
+  svg{
+    color: #fefefe;
+  }
 }
 .sunny-bg{
   background-image: url('../images/sunny-bg.jpg');
+
+  svg{
+    color: #2b3442;
+  }
 }
 .rainy-bg{
   background-image: url('../images/rainy-bg.jpg');
+
+  svg{
+    color: #fefefe;
+  }
 }
 .snowy-bg{
   background-image: url('../images/snowy-bg.jpg');
+
+  svg{
+    color: #fefefe;
+  }
 }
 
 table tr{

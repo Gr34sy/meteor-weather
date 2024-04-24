@@ -7,9 +7,8 @@ import {
   faCloudRain,
   faMoon,
   faCloudBolt,
-  faWind,
   faCloud,
-  faSnow,
+  faSnowflake,
   faMeteor,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -52,6 +51,14 @@ export function MediumBox({ temp, weather, date }) {
                   className="size-[30px]"
                   key={i}
                 />
+              );
+            }else if (item.main == "Snow") {
+              return (
+                <FontAwesomeIcon icon={faSnowflake} className="size-[30px]" key={i} />
+              );
+            }else if (item.main == "Storm") {
+              return (
+                <FontAwesomeIcon icon={faCloudBolt} className="size-[30px]" key={i} />
               );
             } else if (item.main == "Clear" && dayHours.includes(date.hour)) {
               return (

@@ -22,8 +22,8 @@ import { Tabs } from "@/components/Tabs";
 export default async function Home() {
   const location = "Warsaw";
   const zip = "";
-  const lat = 52.23;
-  const lon = 21.01;
+  const lat = 60.39;
+  const lon = 5.32;
 
   const todayRes = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.API_KEY}&units=metric`
@@ -112,7 +112,7 @@ export default async function Home() {
       <SearchBar />
 
       <div className="grid min-[500px]:grid-cols-[repeat(auto-fill,minmax(150px,1fr))] min-[500px]:grid-rows-[1fr_1fr_1fr] gap-4">
-        <TodayCard weather={today.weather} date={today.date} location={today.name} temp={today.temp} />
+        <TodayCard weather={today.weather[0].main} date={today.date} location={today.name} temp={today.temp} />
 
         <SmallBox
           icon={faTemperatureArrowUp}
