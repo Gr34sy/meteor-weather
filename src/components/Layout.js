@@ -34,7 +34,7 @@ export function Layout({ children }) {
         changeMode={() => setNightmode((prev) => !prev)}
       />
 
-      <div className="grid grid-rows-[auto_1fr] gap-4 sm:gap-10 px-2 sm:px-8 lg:px-32 pb-3">
+      <div className="grid grid-rows-[auto_1fr] gap-4 sm:gap-10 px-2 sm:px-8 lg:px-32 pb-14">
         <Header />
         {children}
       </div>

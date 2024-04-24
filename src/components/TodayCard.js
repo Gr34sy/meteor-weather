@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // border-2 border-solid border-white-300
 
 export function TodayCard({ img, icon, location, temp, date }) {
+
   return (
     <div
       className={
@@ -33,7 +34,7 @@ export function TodayCard({ img, icon, location, temp, date }) {
           </div>
 
           <p className="text-white-300 text-md font-bold bg-slate-100 p-2">
-            {date}
+           {`${date.day} ${date.month} ${date.year}`}
           </p>
         </div>
 
