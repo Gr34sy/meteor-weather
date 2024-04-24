@@ -2,9 +2,10 @@
 ## The app utilizes the OpenWeather API and displays weather stats in a nice visual form
 
 ### User can search for a weather data from specific location. On the homepage user can find weather statistics which describe current day at a chosen location (Warsaw by default). Also there is a 5-day forecast with 3-hour step. Therefore user can choose option which specific day stats would be displayed. 
-<br/>
-On 30 day forecast the data
-<br />
+
+On the 30 day forecast page, user gets cards with weather predictions each for one day in 30 day period
+Finally on the pollution page, current air pollution of the chosen location is displayed. On larger devices, app displays the table which helps user to determine how much is the air polluted.
+
 There are also options to hide the sider and switch between dark and light modes. User can also change color theme according to his preferences.The app was created using NextJS, because I have really wanted to get to know Next.JS 14 better. I've learnt some new conventions how to write API routes. I have also used TailwindCSS to fasten the styling of the interface.
 
 #### Technologies used in the app:
